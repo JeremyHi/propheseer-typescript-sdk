@@ -1,0 +1,76 @@
+{
+  "name": "propheseer",
+  "version": "1.0.0",
+  "description": "Official TypeScript SDK for the Propheseer prediction markets API",
+  "author": "Propheseer",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "ws": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ws": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "msw": "^2.6.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0",
+    "ws": "^8.18.0",
+    "@types/ws": "^8.5.0"
+  },
+  "keywords": [
+    "propheseer",
+    "prediction-markets",
+    "polymarket",
+    "kalshi",
+    "gemini",
+    "api",
+    "sdk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeremyHi/propheseer-typescript-sdk"
+  },
+  "homepage": "https://propheseer.com/docs",
+  "bugs": {
+    "url": "https://github.com/JeremyHi/propheseer-typescript-sdk/issues"
+  },
+  "publishConfig": {
+    "provenance": true
+  }
+}
